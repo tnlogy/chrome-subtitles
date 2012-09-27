@@ -1,0 +1,20 @@
+{
+  "name": "Chrome Subtitles - subtitles for web videos",
+  "version": "1.0",
+  "permissions": [
+    "tabs", "http://*/*", "https://*/*"
+  ],
+  "browser_action": {
+      "default_title": "Show overlay and select srt-file and click and drag video area.",
+      "default_icon": "icon.ico"
+  },
+  "manifest_version": 2,
+  "background": { "scripts": ["background.js"] },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "js": ["zepto.js", "overlay.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
